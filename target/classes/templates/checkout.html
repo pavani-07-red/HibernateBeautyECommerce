@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Checkout</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="container mt-4">
+  <h3>Checkout</h3>
+
+  <div th:if="${checkoutItem}">
+    <p>Product: <b th:text="${checkoutItem.name}"></b></p>
+    <p>Price: ₹<b th:text="${checkoutItem.price}"></b></p>
+    <form th:action="@{/checkout/confirm}" method="post">
+      <input type="hidden" name="productId" th:value="${checkoutItem.id}"/>
+      <div class="mb-2"><input name="name" placeholder="Your name" class="form-control" required/></div>
+      <div class="mb-2"><input name="email" placeholder="Your email" type="email" class="form-control" required/></div>
+      <button class="btn btn-success" type="submit">Confirm Purchase</button>
+    </form>
+  </div>
+
+  <div th:if="${cartItems}">
+    <form th:action="@{/checkout/confirm}" method="post">
+      <div class="mb-2"><input name="name" placeholder="Your name" class="form-control" required/></div>
+      <div class="mb-2"><input name="email" placeholder="Your email" type="email" class="form-control" required/></div>
+      <button class="btn btn-success" type="submit">Confirm Purchase (All Cart Items)</button>
+    </form>
+  </div>
+
+  <a href="/cart" class="btn btn-link mt-3">Back to Cart</a>
+</body>
+</html>

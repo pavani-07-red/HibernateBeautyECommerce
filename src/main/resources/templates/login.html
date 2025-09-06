@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="container mt-5">
+  <h2>Login (use username: demo)</h2>
+  <form th:action="@{/login}" method="post">
+    <div class="mb-3"><label>Username</label><input name="username" class="form-control" /></div>
+    <div><button class="btn btn-primary" type="submit">Login</button></div>
+    <p th:if="${error}" th:text="${error}" class="text-danger"></p>
+  </form>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head><title>Transaction</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"></head>
+<body class="container mt-4">
+  <div class="alert alert-success">
+    <h4 th:text="${message}">Checkout successful!</h4>
+  </div>
+  <a href="/products" class="btn btn-primary">Back to Products</a>
+</body>
+</html>
