@@ -9,7 +9,7 @@
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/pavani-07-red/HibernateBeautyECommerce.git'
+                git branch: 'master', url: 'https://github.com/pavani-07-red/HibernateBeautyECommerce.git'
             }
         }
 
