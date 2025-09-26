@@ -1,10 +1,5 @@
-  pipeline {
+ pipeline {
     agent any
-
-    tools {
-        maven 'Maven'    // Match your Jenkins Maven tool name
-        jdk 'Java21'     // Match your Jenkins JDK tool name
-    }
 
     environment {
         JAR_NAME = 'HibernateBeautyECommerce-1.0.0.jar'
@@ -45,8 +40,7 @@
         stage('Run Locally') {
             steps {
                 echo 'Stopping previous HibernateBeautyECommerce app if running...'
-                
-                // Safely stop only processes running your JAR
+
                 bat """
                 powershell -Command "
                 \$processes = Get-CimInstance Win32_Process | Where-Object { \$_.'CommandLine' -like '*${JAR_NAME}*' };
@@ -54,7 +48,6 @@
                 "
                 """
 
-                // Run the JAR in a new terminal window
                 bat "start cmd /c java -jar ${APP_PATH}${JAR_NAME}"
             }
         }
@@ -69,4 +62,5 @@
         }
     }
 }
+
 
