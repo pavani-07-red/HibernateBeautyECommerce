@@ -1,0 +1,16 @@
+com\ecommerce\BeautyEcommerceApplication.class
+com\ecommerce\entity\Product.class
+com\ecommerce\service\ProductService.class
+com\ecommerce\controller\CartController.class
+com\ecommerce\repository\ProductRepository.class
+com\ecommerce\controller\TransactionController.class
+com\ecommerce\config\DataInitializer.class
+com\ecommerce\controller\AuthController.class
+com\ecommerce\entity\Transaction.class
+com\ecommerce\repository\TransactionRepository.class
+com\ecommerce\controller\ProductController.class
+com\ecommerce\repository\UserRepository.class
+com\ecommerce\controller\CheckoutController.class
+com\ecommerce\entity\User.class
+com\ecommerce\repository\CartRepository.class
+com\ecommerce\entity\CartItem.class
